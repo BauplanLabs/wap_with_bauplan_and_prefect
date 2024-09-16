@@ -13,9 +13,10 @@ Data engineering best practices suggest the Write-Audit-Publish (WAP) pattern, w
 
 This repository showcases how [Prefect](https://www.prefect.io/) and [Bauplan](https://www.bauplanlabs.com/) can be used to implement WAP in ~150 lines of no-nonsense pure Python code: no knowledge of the JVM, SQL or Iceberg is required.  
 
-In particular, we will leverage [Prefect transactions](https://docs-3.prefect.io/3.0rc/develop/transactions#write-your-first-transaction) as the ''outer layer'' for safe handling of the relevant _tasks_, and [Bauplan transactions (through branches)](https://docs.bauplanlabs.com/en/latest/tutorial/02_catalog.html) as the ''inner layer'' for safe handling of the relevant _data assets_. For a longer discussion on the context behind the project and the trade-offs involved, please refer to our blog post (ADD LINK TO BLOG).
+In particular, we will leverage [Prefect transactions](https://docs-3.prefect.io/3.0rc/develop/transactions#write-your-first-transaction) as the ''outer layer'' for safe handling of the relevant _tasks_, and [Bauplan transactions (through branches)](https://docs.bauplanlabs.com/en/latest/tutorial/02_catalog.html) as the ''inner layer'' for safe handling of the relevant _data assets_. 
 
-ADD IMAGES
+* For a longer discussion on the context behind the project and the trade-offs involved, please refer to our blog post (ADD LINK TO BLOG). 
+* To get a quick feeling on the developer experience, check out this [demo video](https://www.loom.com/share/0387703f204e4b3680b1cb14302a04da?sid=536f3a9f-c590-4548-a3c2-b5861b8c17c0).
 
 ## Setup
 
@@ -37,12 +38,6 @@ pip install -r requirements.txt
 
 ## Run the flow
 
-Start a local Prefect server:
-
-```bash
-prefect server start
-```
-
 Run the WAP flow:
 
 ```bash
@@ -50,9 +45,17 @@ cd src
 python bauplan_flow.py
 ```
 
-Visualize the flow in the Prefect UI:
+This is a [video demonstration](https://www.loom.com/share/0387703f204e4b3680b1cb14302a04da?sid=536f3a9f-c590-4548-a3c2-b5861b8c17c0) of the flow in action, both in case of successful audit and in case of failure.
 
-ADD IMAGE / VIDEO
+If you also started a Prefect server, you can visualize the flow in the UI, i.e.
+
+```bash
+prefect server start
+```
+
+Then open the Prefect URL and check out the latest run:
+
+![prefect UI](img/UI.png)
 
 
 ## License
