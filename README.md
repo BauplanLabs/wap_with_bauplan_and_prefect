@@ -26,6 +26,8 @@ Bauplan is the programmable lakehouse: you can load, transform, query data all f
 
 To use Bauplan, you need an API key for our preview environment: you can request one [here](https://www.bauplanlabs.com/#join).
 
+Note: the current SDK version is `0.0.3a182` but it is subject to change as the platform continues to evolve - ping us if you need help with any of the APIs used in this project.
+
 ### Prefect and the Python environment
 
 Install the required dependencies (Bauplan and Prefect) in a virtual environment:
