@@ -15,7 +15,7 @@ This repository showcases how [Prefect](https://www.prefect.io/) and [Bauplan](h
 
 In particular, we will leverage [Prefect transactions](https://docs-3.prefect.io/3.0rc/develop/transactions#write-your-first-transaction) as the ''outer layer'' for safe handling of the relevant _tasks_, and [Bauplan transactions (through branches)](https://docs.bauplanlabs.com/en/latest/tutorial/02_catalog.html) as the ''inner layer'' for safe handling of the relevant _data assets_. 
 
-* For a longer discussion on the context behind the project and the trade-offs involved, please refer to our blog post (ADD LINK TO BLOG). 
+* For a longer discussion on the context behind the project and the trade-offs involved, please refer to our [blog post](https://www.prefect.io/blog/prefect-on-the-lakehouse-write-audit-publish-pattern-with-transactions-and-git-for-data).
 * To get a quick feeling on the developer experience, check out this [demo video](https://www.loom.com/share/0387703f204e4b3680b1cb14302a04da?sid=536f3a9f-c590-4548-a3c2-b5861b8c17c0).
 
 ## Setup
