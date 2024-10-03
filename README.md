@@ -3,7 +3,11 @@ A reference implementation of the write-audit-publish pattern with Bauplan and P
 
 ## Overview
 
-A common need on S3-backed analytics systems (e.g. a data lakehouse) is safely ingesting new data into tables available to downstream consumers. Due to their distributed nature and large quantity of data to be bulk-inserted, a lakehouse ingestion is more delicate than the equivalent operation on a traditional database.
+A common need on S3-backed analytics systems (e.g. a data lakehouse) is safely ingesting new data into tables available to downstream consumers. 
+
+![WAP](img/wap.jpg)
+
+Due to their distributed nature and large quantity of data to be bulk-inserted, a lakehouse ingestion is more delicate than the equivalent operation on a traditional database.
 
 Data engineering best practices suggest the Write-Audit-Publish (WAP) pattern, which consists of three main logical steps:
 
@@ -14,6 +18,8 @@ Data engineering best practices suggest the Write-Audit-Publish (WAP) pattern, w
 This repository showcases how [Prefect](https://www.prefect.io/) and [Bauplan](https://www.bauplanlabs.com/) can be used to implement WAP in ~150 lines of no-nonsense pure Python code: no knowledge of the JVM, SQL or Iceberg is required.  
 
 In particular, we will leverage [Prefect transactions](https://docs-3.prefect.io/3.0rc/develop/transactions#write-your-first-transaction) as the ''outer layer'' for safe handling of the relevant _tasks_, and [Bauplan transactions (through branches)](https://docs.bauplanlabs.com/en/latest/tutorial/02_catalog.html) as the ''inner layer'' for safe handling of the relevant _data assets_. 
+
+![Lakhouse flow](img/flow.jpg)
 
 * For a longer discussion on the context behind the project and the trade-offs involved, please refer to our [blog post](https://www.prefect.io/blog/prefect-on-the-lakehouse-write-audit-publish-pattern-with-transactions-and-git-for-data).
 * To get a quick feeling on the developer experience, check out this [demo video](https://www.loom.com/share/0387703f204e4b3680b1cb14302a04da?sid=536f3a9f-c590-4548-a3c2-b5861b8c17c0).
