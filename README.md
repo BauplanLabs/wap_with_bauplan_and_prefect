@@ -33,7 +33,7 @@ Bauplan is the programmable lakehouse: you can load, transform, query data all f
 
 To use Bauplan, you need an API key for our preview environment: you can request one [here](https://www.bauplanlabs.com/#join).
 
-Note: the current SDK version is `0.0.3a182` but it is subject to change as the platform continues to evolve - ping us if you need help with any of the APIs used in this project.
+Note: the current SDK version is `0.0.3a243` but it is subject to change as the platform evolves - ping us if you need help with any of the APIs used in this project.
 
 ### Prefect and the Python environment
 
@@ -47,22 +47,23 @@ pip install -r requirements.txt
 
 ## Run the flow
 
-Run the WAP flow:
-
-```bash
-cd src
-python bauplan_flow.py
-```
-
-This is a [video demonstration](https://www.loom.com/share/0387703f204e4b3680b1cb14302a04da?sid=536f3a9f-c590-4548-a3c2-b5861b8c17c0) of the flow in action, both in case of successful audit and in case of failure.
-
-If you also started a Prefect server, you can visualize the flow in the UI, i.e.
+Start a local Prefect server and take note of the URL:
 
 ```bash
 prefect server start
 ```
 
-Then open the Prefect URL and check out the latest run:
+Then, in a separate terminal, set up the connection and run the flow:
+
+```bash
+cd src
+prefect config set PREFECT_API_URL=http://127.0.0.1:4200/api
+python bauplan_flow.py
+```
+
+This is a [video demonstration](https://www.loom.com/share/0387703f204e4b3680b1cb14302a04da?sid=536f3a9f-c590-4548-a3c2-b5861b8c17c0) of the flow in action, both in case of successful audit and in case of failure.
+
+Through the Prefect server, you can visualize the flow in the UI, e.g. you can check the latest run:
 
 ![prefect UI](img/UI.png)
 
