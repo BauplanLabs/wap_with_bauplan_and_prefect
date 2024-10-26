@@ -58,7 +58,7 @@ Then, in a separate terminal, set up the connection and run the flow:
 ```bash
 cd src
 prefect config set PREFECT_API_URL=http://127.0.0.1:4200/api
-python bauplan_flow.py
+python wap_flow.py --table_name <table_name> --branch_name <branch_name> --s3_path s3://a-public-bucket/your-data.csv
 ```
 
 This is a [video demonstration](https://www.loom.com/share/0387703f204e4b3680b1cb14302a04da?sid=536f3a9f-c590-4548-a3c2-b5861b8c17c0) of the flow in action, both in case of successful audit and in case of failure.
