@@ -36,8 +36,7 @@ def source_to_iceberg_table(
 ):
     """
     
-    Wrap the plan-upload and upload process in Bauplan so 
-    that conflict resolution and upload can happen programmatically.
+    Wrap the table creation and upload process in Bauplan.
     
     """
     get_transaction().set("bauplan_ingestion_branch", bauplan_ingestion_branch)
